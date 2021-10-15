@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
               integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link href="../css/home.css" rel="stylesheet" type="text/css"/>
-       
+
     </head>
     <body>
 
@@ -108,22 +108,21 @@
                 <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto bg-warning" style="width: 60px;">
 
                 <div class= "row" >
-                <c:forEach  var="t" items="${tours}">
-                    <div class ="col-6 col-sm-6 col-md-4 image">
-                        <c:forEach var="i" items="${t.images}">
-                            <img src="${i.image}" alt="New York" >
-                        </c:forEach>
+                <c:forEach  var="th" items="${toursHot}">
+                    <div class ="col-6 col-sm-6 col-md-3 image">
+                        <img src="${th.img}" alt="New York" >                       
                         <p><a href="#">
-                          ${t.tourName}
+                                ${th.tourName}
                             </a>
                         </p>
-                            <p>Lich trinh: ${t.dateTime}</p>
-                            <h5>${t.priceVND()}</h5>
+                        <p>Lich trinh: ${th.dateTime}</p>
+                        <h5>Giá: ${th.priceVND()}</h5>
                     </div>
-                </c:forEach>                  
-                </div>
-                
-                 
+                </c:forEach>
+
+            </div>
+
+
 
             <hr>
 
@@ -131,9 +130,15 @@
             <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto bg-warning" style="width: 60px;">
 
             <div class= "row">
-                <c:forEach  begin="1" end="6">
-                    <div class ="col-12 col-sm-6 col-md-4 image">
-                        <img src="../img/1.jpg" alt=""/>
+                <c:forEach  var="t" items="${tours}">
+                    <div class ="col-6 col-sm-6 col-md-4 image">
+                        <img src="${t.img}" alt="New York" >                       
+                        <p><a href="#">
+                                ${t.tourName}
+                            </a>
+                        </p>
+                        <p>Lich trinh: ${t.dateTime}</p>
+                        <h5>Giá khuyến mãi: ${t.priceVND()}</h5>
                     </div>
                 </c:forEach>
 
@@ -144,9 +149,14 @@
             <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto bg-warning" style="width: 60px;">
 
             <div class= "row">
-                <c:forEach  begin="1" end="6">
-                    <div class ="col-12 col-sm-6 col-md-4 image">
-                        <img src="../img/1.jpg" alt=""/>
+                <c:forEach var="n" items="${news}">
+                    <div class ="col-6 col-sm-6 col-md-3 image">
+                        <img src="${n.image}" alt="New York" >                       
+                        <p><a href="#">
+                                ${n.title}
+                            </a>
+                        </p>
+                        
                     </div>
                 </c:forEach>
 
